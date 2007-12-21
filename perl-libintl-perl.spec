@@ -15,6 +15,7 @@ BuildRequires:	gettext-devel
 #gw yes, this is required by the tests
 BuildRequires:	locales-de
 BuildRequires:	chrpath
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 libintl-perl is a library that supports message translation for
