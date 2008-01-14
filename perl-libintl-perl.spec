@@ -3,7 +3,7 @@
 Summary:	A localization library for Perl
 Name:		perl-%{module}
 Version:	1.16
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	LGPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
