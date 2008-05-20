@@ -8,14 +8,13 @@ License:	LGPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{module}-%{version}.tar.bz2
-BuildRequires:	db2-devel
-BuildRequires:	libgdbm-devel
+BuildRequires:	db4-devel
+BuildRequires:	gdbm-devel
 BuildRequires:	perl-devel
 BuildRequires:	gettext-devel
 #gw yes, this is required by the tests
 BuildRequires:	locales-de
-BuildRequires:	chrpath
-Buildroot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 libintl-perl is a library that supports message translation for
@@ -44,9 +43,6 @@ rm -rf %{buildroot}
 
 %makeinstall_std
 
-# nuke rpath
-find %{buildroot}%{perl_vendorlib} -name "*.so" | xargs chrpath -d
-
 # fix attribs
 find %{buildroot}%{perl_vendorlib} -name "*.pm" | xargs chmod 755
 
@@ -59,5 +55,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/Locale
 %{perl_vendorarch}/auto/Locale
 %{_mandir}/*/*
-
-
