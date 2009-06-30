@@ -2,7 +2,7 @@
 
 Summary:	A localization library for Perl
 Name:		perl-%{module}
-Version:	1.19
+Version:	1.20
 Release:	%mkrel 1
 License:	LGPL
 Group:		Development/Perl
