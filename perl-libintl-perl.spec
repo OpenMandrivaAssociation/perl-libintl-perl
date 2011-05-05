@@ -11,8 +11,6 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{upstream_name}-%{upstream_version}.tar.bz2
 
-BuildRequires:	db4-devel
-BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
 #gw yes, this is required by the tests
