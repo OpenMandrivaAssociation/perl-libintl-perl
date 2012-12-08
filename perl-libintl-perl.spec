@@ -1,9 +1,13 @@
-%define	upstream_name	 libintl-perl
+%define	upstream_name    libintl-perl
 %define	upstream_version 1.20
+
+%if %{_use_internal_dependency_generator}
+%define __noautoreq '/bin/false'
+%endif
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 4
+Release:	6
 
 Summary:	A localization library for Perl
 License:	LGPL
@@ -15,7 +19,6 @@ BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
 #gw yes, this is required by the tests
 BuildRequires:	locales-de
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 libintl-perl is a library that supports message translation for
@@ -32,24 +35,18 @@ similar purpose is available as Locale::MakeText.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-# fix attribs
-find %{buildroot}%{perl_vendorlib} -name "*.pm" | xargs chmod 755
-
-%clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc ChangeLog NEWS README THANKS TODO
 %{perl_vendorlib}/Locale
 %{perl_vendorarch}/auto/Locale
 %{_mandir}/*/*
+
