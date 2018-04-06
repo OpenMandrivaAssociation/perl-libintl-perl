@@ -1,5 +1,5 @@
-%define	modname	libintl-perl
-%define modver 1.23
+%define modname libintl-perl
+%define modver 1.29
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq '/bin/false'
@@ -8,7 +8,7 @@
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	7
+Release:	1
 License:	LGPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -47,5 +47,3 @@ make test
 %{perl_vendorlib}/Locale
 %{perl_vendorarch}/auto/Locale
 %{_mandir}/man3/*
-
-
