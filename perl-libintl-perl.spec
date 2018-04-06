@@ -48,7 +48,7 @@ export PERL_USE_UNSAFE_INC=1
 %makeinstall_std
 
 %files
-%doc ChangeLog NEWS README THANKS TODO
+%doc NEWS README THANKS TODO
 %{perl_vendorlib}/Locale
 %{perl_vendorarch}/auto/Locale
 %{_mandir}/man3/*
