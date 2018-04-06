@@ -33,6 +33,9 @@ similar purpose is available as Locale::MakeText.
 %setup -qn %{modname}-%{modver}
 
 %build
+# fix build with modules from ./lib/:
+export PERL_USE_UNSAFE_INC=1
+
 perl Makefile.PL INSTALLDIRS=vendor
 %make
 
@@ -40,6 +43,8 @@ perl Makefile.PL INSTALLDIRS=vendor
 make test
 
 %install
+# fix build with modules from ./lib/:
+export PERL_USE_UNSAFE_INC=1
 %makeinstall_std
 
 %files
