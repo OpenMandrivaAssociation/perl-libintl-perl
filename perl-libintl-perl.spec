@@ -13,6 +13,7 @@ License:	LGPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/libintl-perl-%{modver}.tar.gz
+BuildRequires:	perl(Test)
 BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
 #gw yes, this is required by the tests
