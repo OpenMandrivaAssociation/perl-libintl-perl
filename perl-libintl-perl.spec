@@ -8,10 +8,10 @@
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://metacpan.org/release/libintl-perl
 Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl(Test)
 BuildRequires:	gettext-devel
