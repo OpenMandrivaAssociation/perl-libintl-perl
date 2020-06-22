@@ -8,7 +8,7 @@
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	LGPLv2
 Group:		Development/Perl
 Url:		https://metacpan.org/release/libintl-perl
