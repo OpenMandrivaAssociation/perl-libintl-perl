@@ -5,6 +5,11 @@
 %define __noautoreq '/bin/false'
 %endif
 
+%ifarch %{x86_64}
+# FIXME workaround for debug generator
+%global _debugsource_template %{nil}
+%endif
+
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
