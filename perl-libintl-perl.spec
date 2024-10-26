@@ -1,23 +1,13 @@
 %define modname libintl-perl
-%define modver 1.32
-
-%if %{_use_internal_dependency_generator}
-%define __noautoreq '/bin/false'
-%endif
-
-%ifarch %{x86_64}
-# FIXME workaround for debug generator
-%global _debugsource_template %{nil}
-%endif
 
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	5
+Version:	1.33
+Release:	1
 License:	LGPLv2
 Group:		Development/Perl
 Url:		https://metacpan.org/release/libintl-perl
-Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{modname}-%{version}.tar.gz
 BuildRequires:	perl(Test)
 BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
@@ -36,14 +26,14 @@ into mixed-language projects. An alternative library with a
 similar purpose is available as Locale::MakeText. 
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
 
 %build
 # fix build with modules from ./lib/:
 export PERL_USE_UNSAFE_INC=1
 
 perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 make test
@@ -51,7 +41,7 @@ make test
 %install
 # fix build with modules from ./lib/:
 export PERL_USE_UNSAFE_INC=1
-%makeinstall_std
+%make_install
 
 %files
 %doc NEWS README THANKS TODO
