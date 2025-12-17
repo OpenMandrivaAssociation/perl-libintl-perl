@@ -3,7 +3,7 @@
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
 Version:	1.33
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		Development/Perl
 Url:		https://metacpan.org/release/libintl-perl
