@@ -8,6 +8,7 @@ License:	LGPLv2
 Group:		Development/Perl
 Url:		https://metacpan.org/release/libintl-perl
 Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{modname}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	perl(Test)
 BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
