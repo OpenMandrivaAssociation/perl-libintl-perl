@@ -2,17 +2,17 @@
 
 Summary:	A localization library for Perl
 Name:		perl-%{modname}
-Version:	1.33
-Release:	2
+Version:	1.37
+Release:	1
 License:	LGPLv2
 Group:		Development/Perl
-Url:		https://metacpan.org/release/libintl-perl
-Source0:	http://www.cpan.org/authors/id/G/GU/GUIDO/%{modname}-%{version}.tar.gz
+Url:		https://metacpan.org/dist/libintl-perl
+Source0:	https://cpan.metacpan.org/authors/id/G/GU/GUIDO/%{modname}-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Test)
 BuildRequires:	gettext-devel
 BuildRequires:	perl-devel
-#gw yes, this is required by the tests
+# required by the tests
 BuildRequires:	locales-de
 
 %description
@@ -24,7 +24,7 @@ of functions in C, and it uses the same file formats as GNU
 gettext, making it possible to use all tools available for gettext
 itself and to seamlessly integrate internationalized Perl code
 into mixed-language projects. An alternative library with a
-similar purpose is available as Locale::MakeText. 
+similar purpose is available as Locale::MakeText.
 
 %prep
 %autosetup -p1 -n %{modname}-%{version}
